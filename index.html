@@ -9,14 +9,7 @@
 <title>Pro Coach Gym Tracker</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f0f1a;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-  -webkit-tap-highlight-color: transparent;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f1a; color: #fff; min-height: 100vh; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
 .app-container { max-width: 480px; margin: 0 auto; padding-bottom: 90px; }
 .screen { display: none; padding: 16px; animation: fadeIn 0.3s ease; }
 .screen.active { display: block; }
@@ -25,30 +18,13 @@ body {
 .header .emoji { font-size: 48px; margin-bottom: 8px; }
 .header h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
 .header p { color: #888; font-size: 13px; margin-top: 4px; }
-.card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 12px;
-  transition: all 0.2s;
-}
+.card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; margin-bottom: 12px; transition: all 0.2s; }
 .card:active { transform: scale(0.98); }
 .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
 .stat-box { text-align: center; padding: 14px 8px; }
 .stat-value { font-size: 24px; font-weight: 800; }
 .stat-label { font-size: 11px; color: #888; margin-top: 2px; }
-.day-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
+.day-card { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.04); margin-bottom: 10px; cursor: pointer; transition: all 0.2s; }
 .day-card:active { transform: scale(0.97); }
 .day-indicator { width: 4px; height: 40px; border-radius: 4px; flex-shrink: 0; }
 .day-info { flex: 1; }
@@ -56,143 +32,42 @@ body {
 .day-name { font-size: 16px; font-weight: 700; margin-top: 2px; }
 .day-muscles { font-size: 12px; color: #888; margin-top: 2px; }
 .day-status { font-size: 12px; font-weight: 600; white-space: nowrap; }
-.exercise-item {
-  background: rgba(255,255,255,0.04);
-  border-radius: 14px;
-  padding: 14px;
-  margin-bottom: 10px;
-}
+.exercise-item { background: rgba(255,255,255,0.04); border-radius: 14px; padding: 14px; margin-bottom: 10px; }
 .exercise-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
 .exercise-name { font-size: 15px; font-weight: 700; }
 .exercise-meta { font-size: 12px; color: #888; margin-bottom: 6px; }
 .exercise-note { font-size: 11px; color: #666; font-style: italic; margin-bottom: 10px; }
+.exercise-img { width: 100%; border-radius: 10px; margin-bottom: 10px; display: block; background: rgba(255,255,255,0.03); }
 .set-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .set-label { font-size: 12px; color: #888; width: 42px; flex-shrink: 0; }
-.set-input {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 8px 10px;
-  color: #fff;
-  font-size: 14px;
-  width: 70px;
-  text-align: center;
-  -webkit-appearance: none;
-}
+.set-input { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 8px 10px; color: #fff; font-size: 14px; width: 70px; text-align: center; -webkit-appearance: none; }
 .set-input:focus { outline: none; border-color: #00d4aa; }
 .set-sep { color: #555; font-size: 13px; }
-.set-check {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.08);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
-  flex-shrink: 0;
-}
+.set-check { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.08); border: none; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; flex-shrink: 0; }
 .set-check.done { background: rgba(0,212,170,0.15); }
 .progress-container { background: rgba(255,255,255,0.08); height: 6px; border-radius: 6px; overflow: hidden; margin: 12px 0; }
 .progress-fill { height: 100%; border-radius: 6px; background: #00d4aa; transition: width 0.4s ease; }
-.btn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
-  border: none;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s;
-  -webkit-appearance: none;
-}
+.btn { width: 100%; padding: 16px; border-radius: 14px; border: none; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; -webkit-appearance: none; }
 .btn:active { transform: scale(0.97); }
 .btn-primary { background: #00d4aa; color: #0f0f1a; }
 .btn-secondary { background: rgba(255,255,255,0.08); color: #fff; }
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(15,15,26,0.95);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  z-index: 100;
-  padding-bottom: env(safe-area-inset-bottom, 0);
-}
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(15,15,26,0.95); backdrop-filter: blur(20px); border-top: 1px solid rgba(255,255,255,0.06); z-index: 100; padding-bottom: env(safe-area-inset-bottom, 0); }
 .nav-inner { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-around; padding: 8px 0; }
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 4px 12px;
-  background: none;
-  border: none;
-  color: #666;
-  font-size: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color 0.2s;
-}
+.nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 4px 12px; background: none; border: none; color: #666; font-size: 10px; font-weight: 600; cursor: pointer; transition: color 0.2s; }
 .nav-item.active { color: #00d4aa; }
 .nav-icon { font-size: 22px; line-height: 1; }
-.select-box {
-  width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #fff;
-  font-size: 14px;
-  -webkit-appearance: none;
-  margin-bottom: 12px;
-}
+.select-box { width: 100%; padding: 14px; border-radius: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 14px; -webkit-appearance: none; margin-bottom: 12px; }
 .select-box:focus { outline: none; border-color: #00d4aa; }
-.history-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 12px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 10px;
-  margin-bottom: 6px;
-}
+.history-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: rgba(255,255,255,0.04); border-radius: 10px; margin-bottom: 6px; }
 .history-weight { font-weight: 700; font-size: 14px; }
 .history-date { font-size: 11px; color: #888; }
 .pr-badge { background: rgba(0,212,170,0.15); color: #00d4aa; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 20px; }
-.toast {
-  position: fixed;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00d4aa;
-  color: #0f0f1a;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 14px;
-  z-index: 200;
-  animation: toastUp 0.3s ease;
-  white-space: nowrap;
-}
+.toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); background: #00d4aa; color: #0f0f1a; padding: 12px 24px; border-radius: 12px; font-weight: 700; font-size: 14px; z-index: 200; animation: toastUp 0.3s ease; white-space: nowrap; }
 @keyframes toastUp { from { transform: translateX(-50%) translateY(20px); opacity: 0; } to { transform: translateX(-50%) translateY(0); opacity: 1; } }
 .completed { opacity: 0.5; }
 .empty-state { text-align: center; padding: 40px 20px; color: #555; }
 .empty-state .emoji { font-size: 40px; margin-bottom: 12px; }
-.settings-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 14px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
+.settings-item { display: flex; align-items: center; gap: 14px; padding: 16px; background: rgba(255,255,255,0.04); border-radius: 14px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s; }
 .settings-item:active { transform: scale(0.98); }
 .settings-icon { font-size: 24px; }
 .settings-text { flex: 1; }
@@ -203,13 +78,7 @@ body {
 .tracker-table td { padding: 8px 4px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .tracker-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
 #file-input { display: none; }
-@media (max-width: 400px) {
-  .set-input { width: 58px; padding: 8px 4px; font-size: 13px; }
-  .stats-grid { gap: 8px; }
-  .stat-value { font-size: 20px; }
-  .tracker-table { font-size: 10px; }
-  .tracker-table th, .tracker-table td { padding: 6px 2px; }
-}
+@media (max-width: 400px) { .set-input { width: 58px; padding: 8px 4px; font-size: 13px; } .stats-grid { gap: 8px; } .stat-value { font-size: 20px; } .tracker-table { font-size: 10px; } .tracker-table th, .tracker-table td { padding: 6px 2px; } }
 </style>
 </head>
 <body>
@@ -414,6 +283,32 @@ body {
 </div>
 
 <script>
+const exerciseImages = {
+  "Barbell Deadlift": "https://kimi-web-img.moonshot.cn/img/content.artofmanliness.com/b2be2588d26fc39d08b3949b8279d0128c1c9f4b.jpg",
+  "Weighted Pull-Up": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/35d4a5ab1cdc0cee6767d6dd25aab39a1153c052.png",
+  "Barbell Bent-Over Row": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/8a86bfe1c932d4597c113cc028e917929745d9c4.png",
+  "Face Pulls": "https://kimi-web-img.moonshot.cn/img/cdn.muscleandstrength.com/892c9ab821c6ecfc3a08e06a76677648648d65f9.jpg",
+  "Barbell Curl": "https://kimi-web-img.moonshot.cn/img/cdn.muscleandstrength.com/20e6c470e040d31e2435fa33e8db1a06e40367b9.jpg",
+  "Hanging Leg Raise": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/2a3121e0e1a446064cc8eee1189cb22e966e7b93.png",
+  "Barbell Bench Press": "https://kimi-web-img.moonshot.cn/img/fitnessprogramer.com/a28f74964d2f28b9bacf309ad038932171698658.webp",
+  "Overhead Press": "https://kimi-web-img.moonshot.cn/img/liftmanual.com/52c2c09687b1c9dcf8cd670aeff2362ad2484f7c.jpg",
+  "Incline Dumbbell Press": "https://kimi-web-img.moonshot.cn/img/liftmanual.com/f5366d6a603cf4df685b9bb966fb040bd52e3045.jpg",
+  "Weighted Dips": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/35d4a5ab1cdc0cee6767d6dd25aab39a1153c052.png",
+  "Lateral Raise": "https://kimi-web-img.moonshot.cn/img/cdn.muscleandstrength.com/20e6c470e040d31e2435fa33e8db1a06e40367b9.jpg",
+  "Cable Tricep Pushdown": "https://kimi-web-img.moonshot.cn/img/cdn.muscleandstrength.com/892c9ab821c6ecfc3a08e06a76677648648d65f9.jpg",
+  "Front Squat": "https://kimi-web-img.moonshot.cn/img/julielohre.com/e63b6f47a7da370551dc6c353853eaf4e5695ffb.jpg",
+  "Weighted Chin-Up": "https://kimi-web-img.moonshot.cn/img/liftmanual.com/f5366d6a603cf4df685b9bb966fb040bd52e3045.jpg",
+  "Floor Press": "https://kimi-web-img.moonshot.cn/img/liftmanual.com/7a32d8402b569f0fd799e33f3c5964008d04b9d5.jpg",
+  "Romanian Deadlift": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/8a86bfe1c932d4597c113cc028e917929745d9c4.png",
+  "Farmer's Walk": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/2a3121e0e1a446064cc8eee1189cb22e966e7b93.png",
+  "Hack Squat / Leg Press": "https://kimi-web-img.moonshot.cn/img/training.fit/c0278869e7e9c1a39d6f335d3811c0086ea59451.png",
+  "Chest-Supported Row": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/8a86bfe1c932d4597c113cc028e917929745d9c4.png",
+  "Dumbbell Shoulder Press": "https://kimi-web-img.moonshot.cn/img/liftmanual.com/52c2c09687b1c9dcf8cd670aeff2362ad2484f7c.jpg",
+  "Leg Curl": "https://kimi-web-img.moonshot.cn/img/training.fit/dfea87aad920804a0f49c49c8872e726f8d15eb9.png",
+  "Incline Dumbbell Curl": "https://kimi-web-img.moonshot.cn/img/weighttraining.guide/b4893000bf0fcaebc0371818645abafad91a6628.png",
+  "Cable Fly (High-to-Low)": "https://kimi-web-img.moonshot.cn/img/cdn.muscleandstrength.com/892c9ab821c6ecfc3a08e06a76677648648d65f9.jpg"
+};
+
 const program = {
   days: [
     {
@@ -541,8 +436,11 @@ function selectDay(idx) {
   const prev = (appData.workouts || []).filter(w => w.dayIndex === idx).pop();
   const prevMap = {};
   if (prev) prev.exercises.forEach(e => { prevMap[e.name] = { weight: e.weight, reps: e.reps }; });
+  
   document.getElementById('exercise-list').innerHTML = day.exercises.map((ex, ei) => {
     const pd = prevMap[ex.name];
+    const imgUrl = exerciseImages[ex.name] || '';
+    const imgHtml = imgUrl ? `<img src="${imgUrl}" class="exercise-img" alt="${ex.name}" loading="lazy">` : '';
     let setsHTML = '';
     for (let s = 0; s < ex.sets; s++) {
       const wVal = pd && s === 0 ? pd.weight : '';
@@ -560,6 +458,7 @@ function selectDay(idx) {
         <div><div class="exercise-name">${ex.name}</div><div class="exercise-meta">${ex.sets} sets × ${ex.reps} reps · ${ex.rest}</div></div>
         <span id="ex-done-${ei}"></span>
       </div>
+      ${imgHtml}
       <div class="exercise-note">${ex.note}</div>
       ${setsHTML}
     </div>`;
