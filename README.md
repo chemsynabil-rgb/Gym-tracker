@@ -710,9 +710,7 @@ function showToast(msg) {
   t.textContent = msg;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2500);
+</script> </body> </html>
 }
 
 renderHome();
-</script>
-</body>
-</html># Gym-tracker
